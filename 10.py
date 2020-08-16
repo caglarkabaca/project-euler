@@ -31,5 +31,5 @@ for a in range(2,SONKOK + 1):
 
 
         print(a,'bitti diğer asala geçiliyor')
-    
+
 print(sum(liste))
