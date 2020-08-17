@@ -24,8 +24,74 @@ TABLO = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 
 satirlar = TABLO.split('\n')
 
+tablo = []
 
+for satir in satirlar:
 
+    satir_elemanlari = satir.split(' ')
+
+    tablo.append(satir_elemanlari)
 
 
 # /
+
+def yatay(tablo):
+
+    carpimlar = []
+
+    for b in range(20):
+
+        for a in range(17):
+
+            carpim = 1
+
+            carpim =  int(tablo[b][a]) * int(tablo[b][a + 1]) * int(tablo[b][a + 2]) * int(tablo[b][a + 3])
+
+            print(int(tablo[b][a]) , int(tablo[b][a + 1]) , int(tablo[b][a + 2]) , int(tablo[b][a + 3]), 'y')
+
+            carpimlar.append(carpim)
+
+    print(f'yatay max { max(carpimlar) } ')
+    
+def dikey(tablo):
+
+    carpimlar = []
+
+    for b in range(20):
+
+        for a in range(17):
+
+            carpim = 1
+
+            carpim =  int(tablo[a][b]) * int(tablo[a + 1][b]) * int(tablo[a + 2][b]) * int(tablo[a + 3][b])
+
+            print(int(tablo[a][b]) , int(tablo[a + 1][b]) , int(tablo[a + 2][b]) , int(tablo[a + 3][b]), 'd')
+
+            carpimlar.append(carpim)
+    
+    print(f'dikey max { max(carpimlar) }')
+
+def capraz(tablo):
+
+    carpimlar = []
+
+    for b in range(17):
+
+        for a in range(17):
+
+            carpim = 1
+
+            carpim =  int(tablo[b][a]) * int(tablo[b + 1][a + 1]) * int(tablo[b + 2][a + 2]) * int(tablo[b + 3][a + 3])
+
+            print(int(tablo[b][a]) , int(tablo[b + 1][a + 1]) , int(tablo[b + 2][a + 2]) , int(tablo[b + 3][a + 3]), 'c')
+
+            carpimlar.append(carpim)
+
+    
+    print(f'capraz max { max(carpimlar) }')
+
+
+
+yatay(tablo)
+dikey(tablo)
+capraz(tablo)
